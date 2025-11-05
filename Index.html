@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS para reset y fuentes, si es necesario, dejaría esto aquí. Por simplicidad, se movió todo a styles.css */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-particles" id="backgroundParticles"></div>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="bullet"></div>
+                <div class="title">¡BIENVENIDO!</div>
+            </div>
+            <img src="resources/eyeCon.svg" alt="Logo" class="logo" />
+        </div>
+
+        <div class="content">
+            <div class="photo-section">
+                <div class="photo-frame">
+                    <svg class="camera-icon" id="cameraIcon" viewBox="0 0 100 100">
+                        <rect x="15" y="25" width="70" height="50" rx="5" />
+                        <circle cx="50" cy="50" r="15" />
+                        <circle cx="50" cy="50" r="10" />
+                        <circle cx="75" cy="35" r="3" />
+                        <path d="M 35 25 L 40 15 L 60 15 L 65 25" />
+                        <rect x="25" y="65" width="8" height="5" />
+                    </svg>
+                    <img id="preview" alt="Vista previa" />
+                </div>
+                <button class="btn-photo" id="btnTakePhoto">TOMAR FOTO</button>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="nombreCompleto">Nombre Completo</label>
+                    <input type="text" id="nombreCompleto" placeholder="" />
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido1">Apellidos</label>
+                    <input type="text" id="apellido1" placeholder="" />
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido2">Apellidos</label>
+                    <input type="text" id="apellido2" placeholder="" />
+                </div>
+
+                <div class="form-group">
+                    <label for="curp">Codigo</label>
+                    <div class="curp-group">
+                        <input type="text" id="curp" placeholder="" maxlength="18" />
+                        <button class="btn-save" id="btnSave">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal">
+        <div class="modal-content">
+            <video id="video" autoplay></video>
+            <div class="modal-buttons">
+                <button class="btn-capture" id="btnCapture">Capturar</button>
+                <button class="btn-cancel" id="btnCancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
